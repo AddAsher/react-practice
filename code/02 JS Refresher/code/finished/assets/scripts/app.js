@@ -1,5 +1,17 @@
-// import { apiKey } from "./util.js";
+//Current Code Section
+// import {apiKey, abc as content} from "./util.js"
+import { apiKey } from "./util.js";
+import defapiKey from "./util.js";
+import * as util from "./util.js";
 
+console.log(apiKey);
+console.log(defapiKey);
+console.log(util.apiKey);
+
+
+
+//Completed Code section
+/*//  import { apiKey } from "./util.js";
 // import apiKey from "./util.js";
 // import { apiKey, abc as content } from "./util.js";
 // import * as util from "./util.js";
@@ -150,7 +162,8 @@
 
 // const message = “Hello”;
 
-const hobbies = ["Sports", "Cooking"];
-// hobbies = [];
-hobbies.push("Working");
-console.log(hobbies);
+// const hobbies = ["Sports", "Cooking"];
+// // hobbies = [];
+// hobbies.push("Working");
+// console.log(hobbies);
+*/
