@@ -4,11 +4,21 @@ import { apiKey } from "./util.js";
 import defapiKey from "./util.js";
 import * as util from "./util.js";
 
-console.log(apiKey);
-console.log(defapiKey);
-console.log(util.apiKey);
+// console.log(apiKey);
+// console.log(defapiKey);
+// console.log(defapiKey);
+// console.log(util.apiKey);
+// let userMessage = "Hello World!!!";
 
+// console.log(userMessage);
 
+function createGreeting(userName, message){
+    // console.log('Hello ' + userName + '! ' + message);
+    return "Hi, I am " + userName + ". " + message;
+}
+
+createGreeting("Max", "How are you doing?");
+console.log(createGreeting("Max", "How are you doing?"));
 
 //Completed Code section
 /*//  import { apiKey } from "./util.js";
