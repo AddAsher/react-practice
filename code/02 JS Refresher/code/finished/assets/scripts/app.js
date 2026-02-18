@@ -23,22 +23,49 @@ import * as util from "./util.js";
 //     console.log('Hello');
 //     return userName + message;
 // }
+//* Destructuring
+
+// const userNameData = ["Max", "Schwarzmüller"];
+
+// const firstName = userNameData[0];
+// const lastName = userNameData[1];
+
+// const [firstName, lastName] = userNameData;
+
+// const user = {
+//     name: "Max",
+//     age: 34
+// };
+
+// const name = user.name;
+// const age = user.age;
+
+// const {name: userName, age} = {
+//     name: "Max",
+//     age: 34
+// };
+
+// console.log(userName);
+// console.log(age);
+
+
+
 //* Arrays and Array Methods
 
-const hobbies = ["Sports", "Cooking", "Reading"];
-console.log(hobbies[0]);
+// const hobbies = ["Sports", "Cooking", "Reading"];
+// console.log(hobbies[0]);
 
-hobbies.push("Working");
-console.log(hobbies);
+// hobbies.push("Working");
+// console.log(hobbies);
 
-// const index =hobbies.findIndex((item) =>{
-//     return item === 'Sports';
-// });w
+// // const index =hobbies.findIndex((item) =>{
+// //     return item === 'Sports';
+// // });w
 
-const index =hobbies.findIndex((item) =>item === 'Sports');
+// const index =hobbies.findIndex((item) =>item === 'Sports');
 
-const editedHobbies = hobbies.map((item) => ({ text: item }));
-console.log(editedHobbies);
+// const editedHobbies = hobbies.map((item) => ({ text: item }));
+// console.log(editedHobbies);
 
 // *Objects and Classes
 // const user = {
