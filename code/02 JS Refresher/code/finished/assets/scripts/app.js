@@ -1,4 +1,4 @@
-//Current Code Section
+//*Current Code Section
 // import {apiKey, abc as content} from "./util.js"
 import { apiKey } from "./util.js";
 import defapiKey from "./util.js";
@@ -23,8 +23,24 @@ import * as util from "./util.js";
 //     console.log('Hello');
 //     return userName + message;
 // }
+//* Arrays and Array Methods
 
-// Objects and Classes
+const hobbies = ["Sports", "Cooking", "Reading"];
+console.log(hobbies[0]);
+
+hobbies.push("Working");
+console.log(hobbies);
+
+// const index =hobbies.findIndex((item) =>{
+//     return item === 'Sports';
+// });w
+
+const index =hobbies.findIndex((item) =>item === 'Sports');
+
+const editedHobbies = hobbies.map((item) => ({ text: item }));
+console.log(editedHobbies);
+
+// *Objects and Classes
 // const user = {
 //     name: "Max",
 //     age: 34,
@@ -42,7 +58,7 @@ import * as util from "./util.js";
 //         this.name = name;
 //         this.age = age;
 //     }
-    
+
 //     greet(){
 //         console.log('Hi! I am ' + this.name);
 //     }
@@ -52,7 +68,7 @@ import * as util from "./util.js";
 // console.log(user1);
 // user1.greet();
 
-//Completed Code section
+//*Completed Code section
 /*//  import { apiKey } from "./util.js";
 // import apiKey from "./util.js";
 // import { apiKey, abc as content } from "./util.js";
