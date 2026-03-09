@@ -24,7 +24,59 @@ import * as util from "./util.js";
 //     return userName + message;
 // }
 
+//* Reference vs Primitive Values
+let userMessage = 'Hello!';
+userMessage = userMessage.concat('!!!');
+console.log(userMessage);
 
+const hobbies = ["Sports", "Cooking"];
+// hobbies = []; //! This will not work because we cannot reassign a new value to a constant variable. However, we can modify the contents of the array.
+hobbies.push("Working");
+console.log(hobbies);
+
+//* Defining functions inside of functions
+// function init() {
+//     function greet() {
+//         console.log("Hi!");
+//     }
+//     greet();
+// }
+//* Using Functions as Values
+// function handleTimeout() {
+//     console.log("Timed out!");
+// }
+
+// const handletimeout2 = () => {
+//     console.log("Timed out ... again!");
+// };
+
+// setTimeout(handleTimeout, 1000);
+// setTimeout(handletimeout2, 2000);
+// setTimeout(() => {
+//     console.log("More timing out...");
+// }, 3000);
+
+// function greeter(greetFn){
+//     greetFn();
+// }
+
+// greeter(() => console.log("Hi"));
+//* Control Structures
+
+// const password = prompt("Your password");
+// if (password === "Hello") {
+//     console.log("Hello works");
+// } else if (password === "hello") {
+//     console.log("hello works");
+// } else {
+//     console.log("Access not granted.");
+// }
+
+// const hobbies = ["Sports", "Cooking"];
+
+// for (const hobby of hobbies) {
+//     console.log(hobby);
+// }
 
 
 //* Spread Operator
