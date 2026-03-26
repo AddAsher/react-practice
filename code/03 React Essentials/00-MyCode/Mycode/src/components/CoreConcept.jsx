@@ -8,6 +8,7 @@ export default function CoreConecpt({ image, title, description }) {
     </li>
   );
 }
+
 // function CoreConecpt(props) {
 //   return (
 //     <li>
