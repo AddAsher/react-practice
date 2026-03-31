@@ -1,9 +1,10 @@
 import "./App.css";
 import reactImg from "./assets/react-core-concepts.png";
-import componentsImg from './assets/components.png';
+import componentsImg from "./assets/components.png";
 import { CORE_CONCEPTS } from "./data";
 import Header from "./components/Header/Header.jsx";
 import CoreConecpt from "./components/CoreConcept.jsx";
+import TabButton from "./components/TabButton.jsx";
 
 function App() {
   return (
@@ -23,6 +24,15 @@ function App() {
             <CoreConecpt {...CORE_CONCEPTS[3]} />
             {/* <CoreConecpt {...CORE_CONCEPTS[3]} /> */}
           </ul>
+        </section>
+        <section id="examples">
+          <h2>Examples</h2>
+          <menu>
+            <TabButton>Components</TabButton>
+            <TabButton>JSX</TabButton>
+            <TabButton>Props</TabButton>
+            <TabButton>State</TabButton>
+          </menu>
         </section>
       </main>
     </div>
