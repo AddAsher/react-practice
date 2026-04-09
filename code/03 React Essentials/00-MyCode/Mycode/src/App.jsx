@@ -1,18 +1,29 @@
-import "./App.css";
-import reactImg from "./assets/react-core-concepts.png";
-import componentsImg from "./assets/components.png";
+// import "./App.css";
+import { use, useState } from "react";
+
 import { CORE_CONCEPTS } from "./data";
 import Header from "./components/Header/Header.jsx";
 import CoreConecpt from "./components/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
 
-function App() {
-    let tabContent = "Please click a button";
+// Hooks must not be called outside of a React function component or a custom hook. 
+// This is why we cannot call useState() in the handleSelect() function, 
+// which is just a regular JavaScript function. 
+// Instead, we need to call useState() at the top level of our App component, 
+// and then we can use the state variable and the state updater function that it 
+// returns to manage our tab content.
+// Hooks also can only be called on the top level (function App(), not in handleSelect())
 
-    function handleSelect(selectedButton) {
-      // selectedButton => 'components', 'jsx', 'props', 'state'
-      tabContent = selectedButton;
-    }
+function App() {
+  const [ selectedTopic, setSelectedTopic ] = useState('Please click a button');
+
+  function handleSelect(selectedButton) {
+    // selectedButton => 'components', 'jsx', 'props', 'state'
+    setSelectedTopic(selectedButton);
+    // console.log(`You clicked on the ${selectedTopic} tab!`);
+    // This will show the old one because state updates are asynchronous,
+    //  so the value of selectedTopic won't be updated until the next render.
+  }
   return (
     <div>
       <Header />
@@ -35,12 +46,14 @@ function App() {
           <h2>Examples</h2>
           <menu>
             {/* <TabButton onSelect={handleSelect}>Components</TabButton> */}
-            <TabButton onSelect={() =>handleSelect('components')}>Components</TabButton>
-            <TabButton onSelect={() =>handleSelect('jsx')}>JSX</TabButton>
-            <TabButton onSelect={() =>handleSelect('props')}>Props</TabButton>
-            <TabButton onSelect={() =>handleSelect('state')}>State</TabButton>
+            <TabButton onSelect={() => handleSelect("components")}>
+              Components
+            </TabButton>
+            <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
+            <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
+            <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
-          {tabContent}
+          {selectedTopic}
         </section>
       </main>
     </div>
