@@ -3,7 +3,7 @@ import { use, useState } from "react";
 
 import { CORE_CONCEPTS, EXAMPLES } from "./data";
 import Header from "./components/Header/Header.jsx";
-import CoreConecpt from "./components/CoreConcept.jsx";
+import CoreConcept from "./components/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
 
 // Hooks must not be called outside of a React function component or a custom hook.
@@ -45,16 +45,20 @@ function App() {
       <main>
         <section id="core-concepts">
           <h2>Core Concepts</h2>
+          {/* {[<p>Hello</p>, <p>World</p>]} */}
           <ul>
-            <CoreConecpt
+            {CORE_CONCEPTS.map((conceptItem) => (
+              <CoreConcept key={conceptItem.title} {...conceptItem} />
+            ))}
+            {/* <CoreConcept
               title={CORE_CONCEPTS[0].title}
               description={CORE_CONCEPTS[0].description}
               image={CORE_CONCEPTS[0].image}
             />
-            <CoreConecpt {...CORE_CONCEPTS[1]} />
-            <CoreConecpt {...CORE_CONCEPTS[2]} />
-            <CoreConecpt {...CORE_CONCEPTS[3]} />
-            {/* <CoreConecpt {...CORE_CONCEPTS[3]} /> */}
+            <CoreConcept {...CORE_CONCEPTS[1]} />
+            <CoreConcept {...CORE_CONCEPTS[2]} />
+            <CoreConcept {...CORE_CONCEPTS[3]} /> */}
+            {/* <CoreConcept {...CORE_CONCEPTS[3]} /> */}
           </ul>
         </section>
         <section id="examples">
