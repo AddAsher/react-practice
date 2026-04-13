@@ -6,16 +6,16 @@ import Header from "./components/Header/Header.jsx";
 import CoreConecpt from "./components/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
 
-// Hooks must not be called outside of a React function component or a custom hook. 
-// This is why we cannot call useState() in the handleSelect() function, 
-// which is just a regular JavaScript function. 
-// Instead, we need to call useState() at the top level of our App component, 
-// and then we can use the state variable and the state updater function that it 
+// Hooks must not be called outside of a React function component or a custom hook.
+// This is why we cannot call useState() in the handleSelect() function,
+// which is just a regular JavaScript function.
+// Instead, we need to call useState() at the top level of our App component,
+// and then we can use the state variable and the state updater function that it
 // returns to manage our tab content.
 // Hooks also can only be called on the top level (function App(), not in handleSelect())
 
 function App() {
-  const [ selectedTopic, setSelectedTopic ] = useState('components');
+  const [selectedTopic, setSelectedTopic] = useState();
 
   function handleSelect(selectedButton) {
     // selectedButton => 'components', 'jsx', 'props', 'state'
@@ -24,6 +24,21 @@ function App() {
     // This will show the old one because state updates are asynchronous,
     //  so the value of selectedTopic won't be updated until the next render.
   }
+
+  let tabContent = <p>Please select a topic.</p>;
+
+  if (selectedTopic) {
+    tabContent = (
+      <div id="tab-content">
+        <h3>{EXAMPLES[selectedTopic].title}</h3>
+        <p>{EXAMPLES[selectedTopic].description}</p>
+        <pre>
+          <code>{EXAMPLES[selectedTopic].code}</code>
+        </pre>
+      </div>
+    );
+  }
+
   return (
     <div>
       <Header />
@@ -53,13 +68,7 @@ function App() {
             <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
             <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
-          <div id="tab-content">
-            <h3>{EXAMPLES[selectedTopic].title}</h3>
-            <p>{EXAMPLES[selectedTopic].description}</p>
-            <pre>
-              <code>{EXAMPLES[selectedTopic].code}</code>
-            </pre>
-          </div>
+          {tabContent}
         </section>
       </main>
     </div>
